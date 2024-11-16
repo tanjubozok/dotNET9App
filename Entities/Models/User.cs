@@ -6,9 +6,9 @@ public class User : EntityBase, IEntity
 {
     public string? FirstName { get; set; }
     public string? LastName { get; set; }
-    public required string Email { get; set; }
-    public required string Username { get; set; }
-    public required byte[] PasswordHash { get; set; }
+    public string Email { get; set; } = string.Empty;
+    public string Username { get; set; } = string.Empty;
+    public byte[] PasswordHash { get; set; } = [];
     public string? Picture { get; set; }
     public string? Description { get; set; }
 

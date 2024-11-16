@@ -4,8 +4,8 @@ namespace Entities.Models;
 
 public class Article : EntityBase, IEntity
 {
-    public required string Title { get; set; }
-    public required string Content { get; set; }
+    public string Title { get; set; } = string.Empty;
+    public string Content { get; set; } = string.Empty;
     public string? Thumbnail { get; set; }
     public DateTime Date { get; set; } = DateTime.Now;
     public int ViewsCount { get; set; } = 0;
