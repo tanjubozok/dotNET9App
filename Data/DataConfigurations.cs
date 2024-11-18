@@ -1,11 +1,6 @@
-﻿using Data.Context;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
+﻿namespace Data;
 
-namespace Data;
-
-public static class Configurations
+public static class DataConfigurations
 {
     public static void AddDataConfiguration(this IServiceCollection services, IConfiguration configuration)
     {

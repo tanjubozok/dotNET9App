@@ -1,9 +1,4 @@
-﻿using Data.Abstract;
-using Entities.Models;
-using Microsoft.EntityFrameworkCore;
-using Shared.Data.Concrete;
-
-namespace Data.Repositories;
+﻿namespace Data.Repositories;
 
 public class ArticleRepository : Repository<Article>, IArticleRepository
 {

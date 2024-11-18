@@ -1,7 +1,4 @@
-﻿using Entities.Models;
-using Microsoft.EntityFrameworkCore;
-
-namespace Data.Context;
+﻿namespace Data.Context;
 
 public class DatabaseContext : DbContext
 {
