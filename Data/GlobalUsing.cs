@@ -1,6 +1,7 @@
 ﻿global using Data.Abstract;
 global using Data.Configurations;
 global using Data.Context;
+global using Data.Repositories;
 global using Entities.Models;
 global using Microsoft.EntityFrameworkCore;
 global using Microsoft.EntityFrameworkCore.Metadata.Builders;
