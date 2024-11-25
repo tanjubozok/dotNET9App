@@ -8,7 +8,7 @@ public class CategoryConfiguration : IEntityTypeConfiguration<Category>
 
         builder.HasKey(x => x.Id);
         builder.Property(x => x.Id)
-            .ValueGeneratedOnAdd();
+            .UseIdentityColumn();
 
         builder.Property(x => x.Name)
             .IsRequired(true)
@@ -45,5 +45,21 @@ public class CategoryConfiguration : IEntityTypeConfiguration<Category>
         builder.HasMany(x => x.Articles)
             .WithOne(x => x.Category)
             .HasForeignKey(x => x.CategoryId);
+
+        var faker = new Faker<Category>()
+           .RuleFor(c => c.Id, f => f.IndexFaker + 1)
+           .RuleFor(c => c.Name, f => f.Commerce.Categories(1)[0])
+           .RuleFor(c => c.Description, f => f.Lorem.Sentence(10))
+           .RuleFor(c => c.CreatedByName, f => f.Name.FullName())
+           .RuleFor(c => c.ModifiedByName, f => f.Name.FullName())
+           .RuleFor(c => c.CratedDate, f => f.Date.Past())
+           .RuleFor(c => c.ModifiedDate, f => f.Date.Recent())
+           .RuleFor(c => c.IsActive, f => f.Random.Bool())
+           .RuleFor(c => c.IsDeleted, f => f.Random.Bool())
+           .RuleFor(c => c.Note, f => f.Lorem.Sentence(5));
+
+        var categories = faker.Generate(20);
+
+        builder.HasData(categories);
     }
 }

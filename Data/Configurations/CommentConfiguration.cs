@@ -8,7 +8,7 @@ public class CommentConfiguration : IEntityTypeConfiguration<Comment>
 
         builder.HasKey(x => x.Id);
         builder.Property(x => x.Id)
-            .ValueGeneratedOnAdd();
+            .UseIdentityColumn();
 
         builder.Property(x => x.Text)
             .IsRequired(true)

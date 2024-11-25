@@ -4,11 +4,11 @@ public class UnitOfWork(DatabaseContext context) : IUnitOfWork
 {
     private readonly DatabaseContext _context = context;
 
-    private ArticleRepository? _articleRepository;
-    private CategoryRepsoitory? _categoryRepsoitory;
-    private CommentRepository? _commentRepository;
-    private RoleRepository? _roleRepository;
-    private UserRepository? _userRepository;
+    private readonly ArticleRepository? _articleRepository;
+    private readonly CategoryRepsoitory? _categoryRepsoitory;
+    private readonly CommentRepository? _commentRepository;
+    private readonly RoleRepository? _roleRepository;
+    private readonly UserRepository? _userRepository;
 
     public IArticleRepository ArticleRepository
         => _articleRepository

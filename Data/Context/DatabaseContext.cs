@@ -1,19 +1,28 @@
 ﻿namespace Data.Context;
 
-public class DatabaseContext : DbContext
+public class DatabaseContext(DbContextOptions options) : DbContext(options)
 {
-    public DatabaseContext(DbContextOptions options)
-        : base(options)
-    {
-    }
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.ApplyConfiguration(new ArticleConfiguration());
+        #region configurations
+
         modelBuilder.ApplyConfiguration(new CategoryConfiguration());
+        modelBuilder.ApplyConfiguration(new ArticleConfiguration());
         modelBuilder.ApplyConfiguration(new CommentConfiguration());
         modelBuilder.ApplyConfiguration(new RoleConfiguration());
         modelBuilder.ApplyConfiguration(new UserConfiguration());
+
+        #endregion
+
+        #region seeds
+
+        //modelBuilder.ApplyConfiguration(new RoleSeed());
+        //modelBuilder.ApplyConfiguration(new UserSeed());
+        //modelBuilder.ApplyConfiguration(new CategorySeed());
+        //modelBuilder.ApplyConfiguration(new ArticleSeed());
+        //modelBuilder.ApplyConfiguration(new CommentSeed());
+
+        #endregion
     }
 
     public DbSet<Article> Articles { get; set; }

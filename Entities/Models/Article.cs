@@ -7,7 +7,7 @@ public class Article : EntityBase, IEntity
     public string Title { get; set; } = string.Empty;
     public string Content { get; set; } = string.Empty;
     public string? Thumbnail { get; set; }
-    public DateTime Date { get; set; } = DateTime.Now;
+    public DateTime Date { get; set; }
     public int ViewsCount { get; set; } = 0;
     public int CommentCount { get; set; } = 0;
     public string? SeoAuthor { get; set; }
