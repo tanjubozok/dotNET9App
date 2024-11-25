@@ -8,7 +8,7 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
 
         builder.HasKey(x => x.Id);
         builder.Property(x => x.Id)
-            .ValueGeneratedOnAdd();
+            .UseIdentityColumn();
 
         builder.Property(x => x.FirstName)
             .IsRequired(false)

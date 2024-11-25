@@ -1,7 +1,9 @@
-﻿global using Data.Abstract;
+﻿global using Bogus;
+global using Data.Abstract;
 global using Data.Configurations;
 global using Data.Context;
 global using Data.Repositories;
+global using Data.Seeds;
 global using Entities.Models;
 global using Microsoft.EntityFrameworkCore;
 global using Microsoft.EntityFrameworkCore.Metadata.Builders;
