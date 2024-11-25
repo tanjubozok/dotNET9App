@@ -2,7 +2,8 @@
 
 public class ArticleRepository : Repository<Article>, IArticleRepository
 {
-    public ArticleRepository(DbContext context) : base(context)
+    public ArticleRepository(DbContext context) 
+        : base(context)
     {
     }
 }

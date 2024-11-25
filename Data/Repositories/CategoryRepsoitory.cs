@@ -2,7 +2,8 @@
 
 public class CategoryRepsoitory : Repository<Category>, ICategoryReposiyory
 {
-    public CategoryRepsoitory(DbContext context) : base(context)
+    public CategoryRepsoitory(DbContext context) 
+        : base(context)
     {
     }
 }
